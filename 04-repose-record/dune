@@ -1,0 +1,14 @@
+(ocamllex
+  (modules lexer))
+
+(menhir
+  (modules parser))
+
+(executable
+  (name run)
+  (libraries stdio))
+
+(alias
+  (name run)
+  (deps (:x run.exe))
+  (action (run %{x})))
